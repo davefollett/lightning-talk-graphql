@@ -1,6 +1,8 @@
 
 export { default as theme } from './theme.js'
 
+import { Split } from 'mdx-deck/layouts'
+
 # GraphQL
 
 A query language for your API.
@@ -24,12 +26,78 @@ A query language for your API.
 # Project timeline
 
 ---
+# Example Query #1
 
-# Example Query
+<Split>
+
+```
+{
+  allPeople(first:2) {
+    people {
+      name
+      homeworld {
+        name
+      }
+    }
+  }
+}
+```
+
+```
+{
+  "data": {
+    "allPeople": {
+      "people": [
+        {
+          "name": "Luke Skywalker",
+          "homeworld": {
+            "name": "Tatooine"
+          }
+        },
+        {
+          "name": "C-3PO",
+          "homeworld": {
+            "name": "Tatooine"
+          }
+        }
+      ]
+    }
+  }
+}
+```
+
+</Split>
 
 ---
 
-# Example Query
+# Example Query #2
+
+<Split>
+
+```
+{
+  person(id: "cGVvcGxlOjg2") {
+    id
+    name
+    hairColor
+    eyeColor
+  }
+}
+```
+
+```
+{
+  "data": {
+    "person": {
+      "id": "cGVvcGxlOjg2",
+      "name": "Poe Dameron",
+      "hairColor": "brown",
+      "eyeColor": "brown"
+    }
+  }
+}
+```
+</Split>
 
 ---
 
