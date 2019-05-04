@@ -2,7 +2,7 @@
 export { default as theme } from './theme.js'
 
 import { Split } from 'mdx-deck/layouts'
-import { Head } from 'mdx-deck'
+import { Head, Notes } from 'mdx-deck'
 
 <Head>
   <title>GraphQL Lightning Talk by Dave Follett</title>
@@ -26,16 +26,33 @@ A query language for your API.
 * HTTP based protocol
 * Numerous implementations, including most languages
 
+<Notes>
+    <h3>Key Points</h3>
+    <ul>
+        <li>GraphQL elimates under and over fetching</li>
+    </ul>
+</Notes>
+
 ---
 
 # Project timeline
 
+<Notes>
+    <h3>Key Points</h3>
+    <ul>
+        <li>GraphQL has been around for a while</li>
+        <li>GraphQL has a foundation to govern</li>
+    </ul>
+</Notes>
+
 ---
+
 # Example Query #1
 
 <Split>
 
 ```
+// Query
 {
   allPeople(first:2) {
     people {
@@ -49,6 +66,7 @@ A query language for your API.
 ```
 
 ```
+// Query Results
 {
   "data": {
     "allPeople": {
@@ -73,6 +91,15 @@ A query language for your API.
 
 </Split>
 
+<Notes>
+    <h3>Key Points</h3>
+    <ul>
+        <li>Client query shown on the left</li>
+        <li>Server response shown on the right</li>
+        <li>Server responds using the same structure as the client query</li>
+    </ul>
+</Notes>
+
 ---
 
 # Example Query #2
@@ -80,6 +107,7 @@ A query language for your API.
 <Split>
 
 ```
+// Query
 {
   person(id: "cGVvcGxlOjg2") {
     id
@@ -91,6 +119,7 @@ A query language for your API.
 ```
 
 ```
+// Query Results
 {
   "data": {
     "person": {
@@ -103,6 +132,15 @@ A query language for your API.
 }
 ```
 </Split>
+
+<Notes>
+    <h3>Key Points</h3>
+    <ul>
+        <li>Client query shown on the left</li>
+        <li>Server response shown on the right</li>
+        <li>Server responds using the same structure as the client query</li>
+    </ul>
+</Notes>
 
 ---
 
